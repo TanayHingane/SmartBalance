@@ -3,6 +3,35 @@
 
 @custom-variant dark (&:is(.dark *));
 
+::selection {
+  background-color: #42d7d4;
+  color: white;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #222a35;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #626970;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #767676;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -118,5 +147,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@media print {
+  header,
+  #footnm,
+  #footmn,
+  footer,
+  #navbarD,
+  #edit-button,
+  #remove-button,
+  #print-button {
+    display: none !important;
   }
 }

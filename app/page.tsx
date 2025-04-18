@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
+import Pricing from "../components/Home/prisingg";
 
 function page() {
   const router = useRouter();
@@ -14,6 +15,7 @@ function page() {
       <div>
         <Header />
         <Hero />
+        <Pricing />
       </div>
     </div>
   );

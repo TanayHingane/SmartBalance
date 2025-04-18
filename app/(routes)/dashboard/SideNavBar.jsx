@@ -5,11 +5,11 @@ import {
   LayoutDashboard,
   PiggyBank,
   ReceiptText,
-  ShieldCheck,
+  User,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { use, useEffect } from "react";
+import React, { useEffect } from "react";
 
 function SideNavBar() {
   const menuList = [
@@ -33,9 +33,9 @@ function SideNavBar() {
     },
     {
       id: 4,
-      title: "Upgrade",
-      icon: <ShieldCheck />,
-      path: "/dashboard/upgrade",
+      title: "About",
+      icon: <User />,
+      path: "/dashboard/about",
     },
   ];
 
@@ -45,7 +45,7 @@ function SideNavBar() {
   });
 
   return (
-    <div className="h-screen p-5 boder shadow-md">
+    <div className="h-screen p-5 border shadow-md">
       <div className="flex gap-2 items-center">
         <Wallet2 width={40} height={40} color="#42d7d4" />
         <h1 className="font-bold text-xl">SmartBalance</h1>

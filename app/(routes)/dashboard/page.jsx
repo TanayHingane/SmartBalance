@@ -14,6 +14,7 @@ function page() {
 
   const [budgetList, setBudgetList] = useState([]);
   const [expensesList, setExpensesList] = useState([]);
+  const [totalSpend, setTotalRemaining] = useState(0);
 
   useEffect(() => {
     user && getBudgetList();

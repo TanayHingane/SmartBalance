@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { UserButton } from "@clerk/nextjs";
 import { Button } from "./ui/button";
@@ -15,7 +16,7 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className="w-full fixed z-50 bg-white top-0">
       {/* Top Navbar */}
       <div className="p-5 justify-between flex border-b-2">
         <div className="flex gap-2 items-center">
@@ -23,7 +24,10 @@ function Header() {
           <h1 className="font-bold text-2xl">SmartBalance</h1>
         </div>
 
-        <div className="md:flex gap-10 pr-20 items-center font-sans hidden">
+        <div
+          className="md:flex gap-10 pr-20 items-center font-sans hidden"
+          id="navbarD"
+        >
           <Link href="/dashboard">
             <h1 className="text-lg">Global</h1>
           </Link>
@@ -35,7 +39,7 @@ function Header() {
           </Link>
         </div>
 
-        <div className="pr-3 md:flex items-center hidden">
+        <div className="pr-3 md:flex items-center hidden" id="navbarD">
           {isSignedIn ? (
             <UserButton />
           ) : (
