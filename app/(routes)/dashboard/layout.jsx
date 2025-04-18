@@ -8,7 +8,7 @@ import { eq } from "drizzle-orm";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 
-function Dashboardlayout({ children }) {
+function DashboardLayout({ children }) {
   const user = useUser();
   const router = useRouter();
 
@@ -22,21 +22,23 @@ function Dashboardlayout({ children }) {
       .from(Budgets)
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress));
     console.log(result);
-    // if (result?.length === 0) {
-    //   router.replace("/dashboard/budgets");
-    // }
+    if (result?.length === 0) {
+      router.replace("/dashboard/budgets");
+    }
   };
   return (
     <div>
       <div className="fixed md:w-64 hidden md:block ">
         <SideNavbar />
       </div>
-      <div className="md:ml-64 ">
-        <DashHeader />
+      <div className="md:ml-64">
+        <div className="block md:hidden">
+          <DashHeader />
+        </div>
         {children}
       </div>
     </div>
   );
 }
 
-export default Dashboardlayout;
+export default DashboardLayout;
