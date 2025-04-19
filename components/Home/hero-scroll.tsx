@@ -9,20 +9,20 @@ export function HeroScrollDemo() {
         titleComponent={
           <>
             <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Unleash the power of <br />
+              Take control of your finances with <br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Scroll Animations
+                Smart Tracking Tools
               </span>
             </h1>
           </>
         }
       >
         <img
-          src={`/linear.webp`}
+          src={`/scr.png`}
           alt="hero"
           height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          width={1200}
+          className="mx-auto rounded-2xl object-fill h-full  object-left-top"
           draggable={false}
         />
       </ContainerScroll>

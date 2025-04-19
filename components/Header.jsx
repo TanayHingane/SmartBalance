@@ -44,7 +44,11 @@ function Header() {
             <UserButton />
           ) : (
             <Link href="/sign-in">
-              <Button>Sign In</Button>
+              <Button
+                className={"bg-[#42d7d4] hover:bg-[#42d7d4]/90 cursor-pointer"}
+              >
+                Sign In
+              </Button>
             </Link>
           )}
         </div>

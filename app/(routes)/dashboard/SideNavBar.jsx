@@ -1,5 +1,5 @@
 "use client";
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, useUser } from "@clerk/nextjs";
 import {
   Wallet2,
   LayoutDashboard,
@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 
 function SideNavBar() {
   const menuList = [
@@ -44,6 +44,8 @@ function SideNavBar() {
     console.log(path);
   });
 
+  const { user } = useUser();
+
   return (
     <div className="h-screen p-5 border shadow-md">
       <div className="flex gap-2 items-center">
@@ -67,7 +69,7 @@ function SideNavBar() {
       </div>
       <div className="mt-10 fixed bottom-10 p-5 flex gap-3 items-center">
         <UserButton afterSignOutUrl="/" />
-        <p className="text-lg">Profile</p>
+        <p className="text-lg">{user?.firstName}</p>
       </div>
     </div>
   );

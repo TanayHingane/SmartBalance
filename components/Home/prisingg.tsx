@@ -1,5 +1,5 @@
 import React from "react";
-import { Check, Cloud, Database } from "lucide-react";
+import { Check, Cloud, Database, Server } from "lucide-react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
@@ -22,65 +22,39 @@ const Pricing = () => {
         <div className="grid md:grid-cols-2 px-2 gap-8 max-w-4xl mx-auto">
           <PricingCard
             icon={
-              <Cloud className="h-10 w-10 text-chart-1" strokeWidth={1.5} />
+              <Database className="h-10 w-10 text-chart-1" strokeWidth={1.5} />
             }
-            title="Telegram Storage"
+            title="Local Storage"
             price="Free"
-            description="Perfect for storing many small files with unlimited capacity."
+            description="Changes from device to device i.e. saved locally."
             features={[
-              "Unlimited storage capacity",
-              "20MB maximum file size",
-              "Secure Telegram backend",
-              "Basic file management",
-              "Slower upload/download speeds",
-              "No bandwidth limits",
+              "Simple to use",
+              "No setup required",
+              "Simple Design",
+              "No Login Required",
+              "Stores on your device",
+              "No Cloud Connection",
             ]}
             popular={false}
           />
 
           <PricingCard
             icon={
-              <Database className="h-10 w-10 text-chart-2" strokeWidth={1.5} />
+              <Server className="h-10 w-10 text-chart-2" strokeWidth={1.5} />
             }
-            title="Appwrite S3"
+            title="Cloud Storage"
             price="Free"
-            description="Blazing fast storage for larger files with premium features."
+            description="Blazing storage on the cloud with premium features."
             features={[
-              "50MB maximum file size",
-              "Lightning-fast transfers",
-              "Secure S3 bucket storage",
-              "Advanced file management",
-              "Premium bandwidth",
-              "Direct download links",
+              "Expense Management",
+              "Sleek designed",
+              "More secure",
+              "Real-time Budget Tracking",
+              "Visual Budget Overview",
+              "Budget & Expense Reports",
             ]}
             popular={true}
           />
-        </div>
-
-        <div className="mt-20 text-center">
-          <div className="glass-card rounded-xl p-8 max-w-3xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Let&apos;s create something amazing together?
-            </h3>
-            <p className="text-foreground/80 mb-6">
-              Ready to bring your next project to life? Let&apos;s connect and
-              discuss how I can help you achieve your goals.
-            </p>
-            <Button
-              asChild
-              className={undefined}
-              variant={undefined}
-              size={undefined}
-            >
-              <Link
-                href="mailto:vedantbhorofficial@gmail.com?subject=Hello%20I%27m%20____%20from%20____%20company&body=I%20want%20to%20start%20a%20new%20project%20about%20____%20and%20time%20duration%20is%20___%20days."
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Contact Me
-              </Link>
-            </Button>
-          </div>
         </div>
       </div>
     </section>

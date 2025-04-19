@@ -32,13 +32,20 @@ const BarChartDash = ({ budgetList }) => {
           <BarChart
             data={budgetList}
             margin={{ top: 20, right: 30, left: 0, bottom: 5 }}
+            barSize={50}
+            stackOffset="sign"
+            barCategoryGap={5}
+            barGap={5}
+            fill="#15b7b6"
+            stroke="#000000"
+            strokeWidth={0.5}
           >
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
             <Bar dataKey="totalSpend" stackId="a" fill="#15b7b6" />
-            <Bar dataKey="amount" stackId="a" fill="#9af5ed" />
+            <Bar dataKey="amount" stackId="b" fill="#9af5ed" />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>

@@ -1,21 +1,21 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "../components/Header";
 import Hero from "../components/Hero";
-import { useRouter } from "next/navigation";
-import { useUser } from "@clerk/nextjs";
 import Pricing from "../components/Home/prisingg";
 
-function page() {
-  const router = useRouter();
-  const user = useUser();
+import { FAQ } from "../components/faq";
+import Footer from "../components/Footer";
 
+function page() {
   return (
-    <div>
+    <div className="bg-white">
       <div>
         <Header />
         <Hero />
         <Pricing />
+        <FAQ />
+        <Footer />
       </div>
     </div>
   );
