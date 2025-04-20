@@ -9,7 +9,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { use, useEffect } from "react";
+import React, { use, useEffect, useState } from "react";
+import LoadingDash from "../LoadingDash";
 
 function SideNavBar() {
   const menuList = [
@@ -46,15 +47,28 @@ function SideNavBar() {
 
   const { user } = useUser();
 
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = async () => {
+    setLoading(true);
+
+    // Simulate a delay (e.g., API call)
+    await new Promise((resolve) => setTimeout(resolve, 3000));
+
+    setLoading(false);
+  };
+
   return (
     <div className="h-screen p-5 border shadow-md">
-      <div className="flex gap-2 items-center">
-        <Wallet2 width={40} height={40} color="#42d7d4" />
-        <h1 className="font-bold text-xl">SmartBalance</h1>
+      <div className="flex gap-2 items-center cursor-pointer">
+        <a href="/" className="flex gap-2 items-center">
+          <Wallet2 width={40} height={40} color="#42d7d4" />
+          <h1 className="font-bold text-xl">SmartBalance</h1>
+        </a>
       </div>
       <div className="mt-10">
         {menuList.map((item) => (
-          <Link href={item.path} key={item.id}>
+          <Link href={item.path} key={item.id} onClick={handleClick}>
             <h2
               key={item.id}
               className={`flex gap-3 items-center p-5 rounded-lg cursor-pointer ${
