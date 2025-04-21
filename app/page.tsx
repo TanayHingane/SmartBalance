@@ -7,12 +7,9 @@ import Footer from "../components/Footer";
 function page() {
   return (
     <div className="bg-white">
-      <div>
-        <Header />
-        <Hero />
-
-        <Footer />
-      </div>
+      <Header />
+      <Hero />
+      <Footer />
     </div>
   );
 }

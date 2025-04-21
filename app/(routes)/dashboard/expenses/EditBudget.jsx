@@ -105,11 +105,7 @@ function EditBudget({ budgetInfo, refreshData }) {
           </DialogHeader>
           <DialogFooter className="sm:justify-start">
             <DialogClose asChild>
-              <Button
-                disabled={!(name && amount)}
-                onClick={() => onUpdateBudget()}
-                className="mt-5 w-full"
-              >
+              <Button onClick={() => onUpdateBudget()} className="mt-5 w-full">
                 Update Budget
               </Button>
             </DialogClose>
