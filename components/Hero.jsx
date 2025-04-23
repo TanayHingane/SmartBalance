@@ -4,9 +4,10 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { HeroScrollDemo } from "./Home/hero-scroll";
 import { ArrowUpRight } from "lucide-react";
-import Pricing from "./Home/prisingg";
+
 import { FAQ } from "./faq";
 import Loading from "./Loading";
+import FeaturesSection from "./Home/features";
 
 function Hero() {
   const router = useRouter();
@@ -31,7 +32,9 @@ function Hero() {
             </p>
 
             <div className="mt-4 justify-center items-center md:justify-center flex-col flex md:flex-row gap-4 sm:mt-6">
-              <Loading />
+              <div className="w-full md:w-auto">
+                <Loading />
+              </div>
 
               <a
                 className="inline-block w-full md:w-auto rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
@@ -53,9 +56,11 @@ function Hero() {
           />
         </div>
       </section>
-      <div className="bg-white md:-mt-40">
-        <HeroScrollDemo />
-        <Pricing />
+      <div className="">
+        <div className="bg-white -mt-36 md:-mt-44 -my-28 md:-my-32">
+          <HeroScrollDemo />
+        </div>
+        <FeaturesSection />
         <FAQ />
       </div>
     </div>

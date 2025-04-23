@@ -29,7 +29,7 @@ function Header() {
           id="navbarD"
         >
           <Link href="/dashboard">
-            <h1 className="text-lg">Global</h1>
+            <h1 className="text-lg">Cloud</h1>
           </Link>
           <Link href="/local">
             <h1 className="text-lg">Local</h1>
