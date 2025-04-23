@@ -17,10 +17,10 @@ function DashHeader() {
 
   return (
     <div className="p-5 justify-between flex border-b-2">
-      <div className="flex gap-2 items-center">
+      <a href="/" className="flex gap-2 items-center cursor-pointer">
         <Wallet2 color="#42d7d4" height={30} width={30} />
         <h1 className="font-bold text-2xl">SmartBalance</h1>
-      </div>
+      </a>
       <div>
         <Button
           variant="outline"
