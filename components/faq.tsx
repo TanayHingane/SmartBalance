@@ -40,6 +40,21 @@ export function FAQ() {
             managing your budgets effortlessly.
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value="item-9" className={undefined}>
+          <AccordionTrigger className={"cursor-pointer"}>
+            Who made SmartBalance?
+          </AccordionTrigger>
+          <AccordionContent className={undefined}>
+            SmartBalance was created by{" "}
+            <a
+              href="https://www.linkedin.com/in/tanayhingane"
+              className="hover:underline"
+            >
+              Tanay Hingane
+            </a>
+            , who is dedicated to providing a user-friendly budgeting solution.
+          </AccordionContent>
+        </AccordionItem>
         <AccordionItem value="item-3" className={undefined}>
           <AccordionTrigger className={"cursor-pointer"}>
             How do I create a new budget?

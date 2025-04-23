@@ -2,11 +2,11 @@ import React from "react";
 import { Card, CardContent } from "../ui/card";
 import {
   Banknote,
-  WalletMinimal,
   SquarePen,
   ReceiptPoundSterlingIcon,
   Goal,
   MessageCircle,
+  Wallet,
 } from "lucide-react";
 
 const features = [
@@ -16,7 +16,7 @@ const features = [
     description: "Easily track and manage your budgets with intuitive tools.",
   },
   {
-    icon: <WalletMinimal size={40} />,
+    icon: <Wallet size={40} />,
     title: "Expense Tracking",
     description: "Monitor your spending and see where your money goes.",
   },
@@ -55,7 +55,7 @@ const techStack = [
     link: "",
   },
   {
-    name: "React",
+    name: "React.js",
     icon: "/react.svg",
     link: "",
   },
@@ -65,8 +65,13 @@ const techStack = [
     link: "",
   },
   {
-    name: "Supabase",
-    icon: "/supabase.svg",
+    name: "Drizzle",
+    icon: "/drizzle.svg",
+    link: "",
+  },
+  {
+    name: "PostgreSQL",
+    icon: "/postgresql.svg",
     link: "",
   },
   {
@@ -77,6 +82,11 @@ const techStack = [
   {
     name: "Vercel",
     icon: "/vercel.png",
+    link: "",
+  },
+  {
+    name: "Shadcn/ui",
+    icon: "/shadcnui.svg",
     link: "",
   },
   {
@@ -94,7 +104,7 @@ const FeaturesSection = () => {
         {features.map((feature, index) => (
           <Card key={index} className="h-full shadow-lg">
             <CardContent className="flex flex-col items-center p-6">
-              <div className="mb-4">{feature.icon}</div>
+              <div className="mb-4 text-[#42d7d4]">{feature.icon}</div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-center text-gray-600">{feature.description}</p>
             </CardContent>

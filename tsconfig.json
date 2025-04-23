@@ -26,7 +26,8 @@
     "**/*.tsx",
     "lib/utils.ts",
     "app/layout.js",
-    "app/page.tsx"
+    "app/page.tsx",
+    "tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }

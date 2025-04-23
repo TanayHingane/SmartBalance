@@ -38,9 +38,9 @@ function Hero() {
 
               <a
                 className="inline-block w-full md:w-auto rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-                href="#"
+                href="about"
               >
-                <div className="flex items-center">
+                <div className="flex items-center justify-center">
                   About <ArrowUpRight />
                 </div>
               </a>

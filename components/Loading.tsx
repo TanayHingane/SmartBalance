@@ -31,11 +31,11 @@ function Loading() {
       <AlertDialog>
         <AlertDialogTrigger asChild>
           <a
-            className="inline-block w-full md:w-auto rounded border border-emerald-200 bg-[#42d7d4] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:shadow-lg"
+            className="inline-block w-full md:w-auto rounded border  bg-[#15b7b6] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:shadow-lg"
             href={"/dashboard"}
             onClick={handleClick}
           >
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
               Get Started <ArrowUpRight />
             </div>
           </a>

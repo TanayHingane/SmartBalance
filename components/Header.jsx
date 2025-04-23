@@ -28,13 +28,13 @@ function Header() {
           className="md:flex gap-10 pr-20 items-center font-sans hidden"
           id="navbarD"
         >
+          <Link href="/">
+            <h1 className="text-lg">Home</h1>
+          </Link>
           <Link href="/dashboard">
-            <h1 className="text-lg">Cloud</h1>
+            <h1 className="text-lg">Dashboard</h1>
           </Link>
-          <Link href="/local">
-            <h1 className="text-lg">Local</h1>
-          </Link>
-          <Link href="/aboutme">
+          <Link href="/about">
             <h1 className="text-lg">About Me</h1>
           </Link>
         </div>

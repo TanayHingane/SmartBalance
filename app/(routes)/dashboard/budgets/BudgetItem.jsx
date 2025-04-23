@@ -36,7 +36,9 @@ function BudgetItem({ budget }) {
                   : "text-red-500"
               } text-xs `}
             >
-              ₹{budget.amount - budget.totalSpend} Remaining
+              {budget.amount - budget.totalSpend > 0
+                ? budget.amount - budget.totalSpend + " Remaining"
+                : budget.amount - budget.totalSpend + " Debt"}
             </h2>
           </div>
           <div className="w-full bg-slate-300 h-2 rounded-full">
