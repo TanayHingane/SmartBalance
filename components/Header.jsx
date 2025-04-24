@@ -31,8 +31,8 @@ function Header() {
           <Link href="/">
             <h1 className="text-lg">Home</h1>
           </Link>
-          <Link href="/dashboard">
-            <h1 className="text-lg">Dashboard</h1>
+          <Link href="/dashboard/budgets">
+            <h1 className="text-lg">Budgets</h1>
           </Link>
           <Link href="/about">
             <h1 className="text-lg">About Me</h1>
@@ -100,7 +100,7 @@ function Header() {
 
           {[
             { href: "/", label: "Home" },
-            { href: "/dashboard", label: "Dashboard" },
+            { href: "/dashboard/budgets", label: "Budgets" },
             { href: "/about", label: "About" },
           ].map((link, i) => (
             <Link

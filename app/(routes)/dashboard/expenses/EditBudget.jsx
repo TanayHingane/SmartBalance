@@ -58,7 +58,7 @@ function EditBudget({ budgetInfo, refreshData }) {
             size={undefined}
           >
             <SquarePen />
-            Edit
+            <h3 className="hidden md:block">Edit</h3>
           </Button>
         </DialogTrigger>
         <DialogContent>

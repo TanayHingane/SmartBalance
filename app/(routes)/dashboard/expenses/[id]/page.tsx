@@ -87,7 +87,7 @@ function ExpensesScreen({ params }) {
   return (
     <div className="p-10">
       <h2 className="text-2xl font-bold flex justify-between items-center">
-        <div className="flex items-center justify-center gap-1">
+        <div className="flex items-center text-xl md:text-2xl justify-center gap-1">
           <ArrowLeft onClick={router.back} className="cursor-pointer" />
           My Expenses
         </div>
@@ -103,7 +103,7 @@ function ExpensesScreen({ params }) {
                 className="flex cursor-pointer"
                 size={"sm"}
               >
-                <Trash2 /> Delete
+                <Trash2 /> <h3 className="hidden md:block">Delete</h3>
               </Button>
             </AlertDialogTrigger>
             <AlertDialogContent className={undefined}>
