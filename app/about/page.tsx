@@ -46,7 +46,7 @@ export default function AboutPage() {
                 Ready to bring your next project to life? Let's connect and
                 discuss how I can help you achieve your goals.
               </h2>
-              <a href="">
+              <a href="mailto:tanayhingane03@gmail.com?subject=Hello%20I'm%20____%20from%20____%20company&body=I%20want%20to%20start%20a%20new%20project%20about%20____%20and%20time%20duration%20is%20___%20days.">
                 <Button className={"cursor-pointer"} variant={""} size={""}>
                   Contact Me{" "}
                 </Button>
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <Youtube />
               </a>
               <a
-                href="mailto:victus0307@gmail.com"
+                href="mailto:tanayhingane03@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-black"
