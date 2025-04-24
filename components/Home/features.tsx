@@ -116,14 +116,14 @@ const FeaturesSection = () => {
           {techStack.map((tech) => (
             <div
               key={tech.name}
-              className="flex items-center space-x-2 text-lg text-zinc-600"
+              className="flex items-center space-x-0 md:space-x-2 text-lg text-zinc-600"
             >
               <Image
                 src={tech.icon}
                 alt={tech.name}
                 width={20}
                 height={20}
-                className="opacity-70"
+                className="opacity-70 "
               />
               <a href={tech.link} className="hidden sm:block">
                 {tech.name}
