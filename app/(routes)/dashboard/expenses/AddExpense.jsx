@@ -7,31 +7,52 @@ import { db } from "../../../../utils/dbConfig";
 import { toast } from "sonner";
 import moment from "moment";
 import { Loader } from "lucide-react";
+import { eq } from "drizzle-orm";
+import { useUser } from "@clerk/nextjs";
 
 function AddExpense({ budgetId, refreshData }) {
   const [name, setName] = useState();
   const [amount, setAmount] = useState();
   const [loading, setLoading] = useState(false);
+  const { user } = useUser();
   const addNewExpense = async () => {
     setLoading(true);
-    const result = await db
-      .insert(Expenses)
-      .values({
+
+    try {
+      // 1. Check that this budget exists AND was created by the current user
+      const ownedBudget = await db
+        .select()
+        .from(Budgets)
+        .where(eq(Budgets.id, budgetId))
+        .then((results) =>
+          results.find(
+            (b) => b.createdBy === user?.primaryEmailAddress?.emailAddress
+          )
+        );
+
+      if (!ownedBudget) {
+        toast.error("Unauthorized: You don't own this budget.");
+        setLoading(false);
+        return;
+      }
+
+      // 2. If the user owns the budget, allow adding the expense
+      await db.insert(Expenses).values({
         name: name,
         amount: amount,
         budgetId: budgetId,
         createdAt: moment().format("DD-MM-YYYY"),
-      })
-      .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress))
-      .returning({ insertedId: Budgets.id });
+      });
 
-    setAmount("");
-    setName("");
-
-    if (result) {
-      setLoading(false);
+      setAmount("");
+      setName("");
       refreshData();
       toast.success("Expense added successfully");
+    } catch (error) {
+      console.error("Failed to add expense", error);
+      toast.error("Failed to add expense");
+    } finally {
+      setLoading(false);
     }
   };
 
