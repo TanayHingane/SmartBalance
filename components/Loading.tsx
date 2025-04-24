@@ -22,7 +22,7 @@ function Loading() {
     setLoading(true);
 
     // Simulate a delay (e.g., API call)
-    await new Promise((resolve) => setTimeout(resolve, 3000));
+    await new Promise((resolve) => setTimeout(resolve, 4000));
 
     setLoading(false);
   };
@@ -32,7 +32,7 @@ function Loading() {
         <AlertDialogTrigger asChild>
           <a
             className="inline-block w-full md:w-auto rounded border  bg-[#15b7b6] px-5 py-3 font-medium text-white shadow-sm transition-colors hover:shadow-lg"
-            href={"/dashboard"}
+            href={"/dashboard/budgets"}
             onClick={handleClick}
           >
             <div className="flex items-center justify-center">

@@ -6,11 +6,10 @@ import React, { useEffect } from "react";
 import { Budgets } from "../../../utils/schema";
 import { eq } from "drizzle-orm";
 import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+import { Toaster } from "../../../components/ui/sonner";
 
 function DashboardLayout({ children }) {
   const user = useUser();
-  const router = useRouter();
 
   useEffect(() => {
     user && checkUserBudgets();
@@ -22,9 +21,6 @@ function DashboardLayout({ children }) {
       .from(Budgets)
       .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress));
     console.log(result);
-    // if (result?.length == 0) {
-    //   router.replace("/dashboard/budgets");
-    // }
   };
   return (
     <div>
@@ -35,6 +31,7 @@ function DashboardLayout({ children }) {
         <div className="block md:hidden">
           <DashHeader />
         </div>
+        <Toaster />
         {children}
       </div>
     </div>
