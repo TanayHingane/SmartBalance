@@ -79,25 +79,29 @@ function Header() {
         )}
       >
         <nav className="flex flex-col space-y-4 p-6 animate-fade-in">
-          <div className="flex gap-2 items-center text-lg font-medium py-4 border-b border-border/50 transition-all duration-300 hover:text-primary">
-            {isSignedIn ? (
+          {isSignedIn ? (
+            <div className="flex gap-2 items-center text-lg font-medium py-4 border-b border-border/50 transition-all duration-300 hover:text-primary">
               <div className="flex gap-2 items-center">
                 <UserButton />
                 <h2 className="transition-opacity duration-300">
                   {user?.fullName}
                 </h2>
               </div>
-            ) : (
-              <Link href="/sign-in">
-                <Button>Sign In</Button>
-              </Link>
-            )}
-          </div>
+            </div>
+          ) : (
+            <Link
+              href="/sign-in"
+              className="text-lg font-medium py-3 border-b border-border/50 hover:text-primary transition-all duration-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Sign In
+            </Link>
+          )}
 
           {[
+            { href: "/", label: "Home" },
             { href: "/dashboard", label: "Dashboard" },
-            { href: "/dashboard/budgets", label: "Budgets" },
-            { href: "/dashboard/expenses", label: "Expenses" },
+            { href: "/about", label: "About" },
           ].map((link, i) => (
             <Link
               key={link.href}
@@ -111,16 +115,6 @@ function Header() {
               {link.label}
             </Link>
           ))}
-
-          {!isSignedIn && (
-            <Link
-              href="/sign-in"
-              className="text-lg font-medium py-3 border-b border-border/50 hover:text-primary transition-all duration-300"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Sign In
-            </Link>
-          )}
         </nav>
       </div>
     </div>

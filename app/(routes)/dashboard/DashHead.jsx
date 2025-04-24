@@ -71,6 +71,13 @@ function DashHeader() {
             >
               Expenses
             </Link>
+            <Link
+              href="/dashboard/about"
+              className="text-lg font-medium py-3 border-b border-border/50 transition-smooth hover:text-primary"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
           </nav>
         </div>
       </div>
