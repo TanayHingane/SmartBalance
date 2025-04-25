@@ -61,6 +61,7 @@ function page() {
         <div className="md:col-span-2">
           <BarChartDash budgetList={budgetList} />
           <ExpenseListTable
+            budgetCreatedBy={user?.primaryEmailAddress?.emailAddress}
             expenseList={expensesList}
             refreshData={() => getBudgetList()}
             className="mt-5"

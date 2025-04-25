@@ -52,6 +52,7 @@ function page() {
   return (
     <div className="p-8">
       <ExpenseListTable
+        budgetCreatedBy={user?.primaryEmailAddress?.emailAddress}
         expenseList={expensesList}
         refreshData={() => getBudgetList()}
       />

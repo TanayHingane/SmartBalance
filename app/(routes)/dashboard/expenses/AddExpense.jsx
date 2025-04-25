@@ -31,7 +31,9 @@ function AddExpense({ budgetId, refreshData }) {
         );
 
       if (!ownedBudget) {
-        toast.error("Unauthorized: You don't own this budget.");
+        toast.error(
+          "Unauthorized: You cannot add an expense to this budget. You don't own this budget."
+        );
         setLoading(false);
         return;
       }
@@ -42,6 +44,7 @@ function AddExpense({ budgetId, refreshData }) {
         amount: amount,
         budgetId: budgetId,
         createdAt: moment().format("DD-MM-YYYY"),
+        createdBy: user?.primaryEmailAddress?.emailAddress,
       });
 
       setAmount("");

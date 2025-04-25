@@ -26,7 +26,7 @@ import EditBudget from "../../expenses/EditBudget";
 
 function ExpensesScreen({ params }) {
   const { user } = useUser();
-  const [budgetInfo, setBudgetInfo] = useState({});
+  const [budgetInfo, setBudgetInfo] = useState<{ createdBy?: string }>({});
   const [expenseList, setExpenseList] = useState([]);
   const router = useRouter();
 
@@ -57,16 +57,26 @@ function ExpensesScreen({ params }) {
 
   const getExpensesList = async () => {
     const result = await db
-      .select()
+      .select({
+        ...getTableColumns(Expenses),
+        budget: {
+          createdBy: Budgets.createdBy,
+        },
+      })
       .from(Expenses)
+      .leftJoin(Budgets, eq(Expenses.budgetId, Budgets.id))
       .where(eq(Expenses.budgetId, params.id))
       .orderBy(desc(Expenses.id));
 
     setExpenseList(result);
-    console.log(result);
   };
 
   const deleteBudget = async () => {
+    if (budgetInfo.createdBy !== user?.primaryEmailAddress?.emailAddress) {
+      toast.error("Unauthorized action.");
+      return;
+    }
+
     const deleteExpenseResult = await db
       .delete(Expenses)
       .where(eq(Expenses.budgetId, params.id))
@@ -80,6 +90,7 @@ function ExpensesScreen({ params }) {
 
       console.log(result);
     }
+
     toast.success("Budget deleted successfully");
     router.replace("/dashboard/budgets");
   };
@@ -91,45 +102,47 @@ function ExpensesScreen({ params }) {
           <ArrowLeft onClick={router.back} className="cursor-pointer" />
           My Expenses
         </div>
-        <div className="flex gap-2 items-center">
-          <EditBudget
-            budgetInfo={budgetInfo}
-            refreshData={() => getBudgetInfo()}
-          />
-          <AlertDialog>
-            <AlertDialogTrigger asChild>
-              <Button
-                variant="destructive"
-                className="flex cursor-pointer"
-                size={"sm"}
-              >
-                <Trash2 /> <h3 className="hidden md:block">Delete</h3>
-              </Button>
-            </AlertDialogTrigger>
-            <AlertDialogContent className={undefined}>
-              <AlertDialogHeader className={undefined}>
-                <AlertDialogTitle className={undefined}>
-                  Are you absolutely sure?
-                </AlertDialogTitle>
-                <AlertDialogDescription className={undefined}>
-                  This action cannot be undone. This will permanently delete
-                  your Current Budget and All Your Expenses from our servers.
-                </AlertDialogDescription>
-              </AlertDialogHeader>
-              <AlertDialogFooter className={undefined}>
-                <AlertDialogCancel className={"cursor-pointer"}>
-                  Cancel
-                </AlertDialogCancel>
-                <AlertDialogAction
-                  className={"cursor-pointer"}
-                  onClick={() => deleteBudget()}
+        {budgetInfo?.createdBy === user?.primaryEmailAddress?.emailAddress && (
+          <div className="flex gap-2 items-center">
+            <EditBudget
+              budgetInfo={budgetInfo}
+              refreshData={() => getBudgetInfo()}
+            />
+            <AlertDialog>
+              <AlertDialogTrigger asChild>
+                <Button
+                  variant="destructive"
+                  className="flex cursor-pointer"
+                  size={"sm"}
                 >
-                  Continue
-                </AlertDialogAction>
-              </AlertDialogFooter>
-            </AlertDialogContent>
-          </AlertDialog>
-        </div>
+                  <Trash2 /> <h3 className="hidden md:block">Delete</h3>
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent className={undefined}>
+                <AlertDialogHeader className={undefined}>
+                  <AlertDialogTitle className={undefined}>
+                    Are you absolutely sure?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className={undefined}>
+                    This action cannot be undone. This will permanently delete
+                    your Current Budget and All Your Expenses from our servers.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter className={undefined}>
+                  <AlertDialogCancel className={"cursor-pointer"}>
+                    Cancel
+                  </AlertDialogCancel>
+                  <AlertDialogAction
+                    className={"cursor-pointer"}
+                    onClick={() => deleteBudget()}
+                  >
+                    Continue
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+          </div>
+        )}
       </h2>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 gap-5">
         {budgetInfo ? (
@@ -141,6 +154,7 @@ function ExpensesScreen({ params }) {
       </div>
       <div className="mt-10">
         <ExpenseListTable
+          budgetCreatedBy={budgetInfo?.createdBy}
           refreshData={() => getBudgetInfo()}
           expenseList={expenseList}
         />
