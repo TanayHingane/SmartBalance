@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ContainerScroll } from "./container-animation";
+import { Youtube } from "lucide-react";
 
 export function HeroScrollDemo() {
   const [isMobile, setIsMobile] = useState(false);
@@ -27,23 +28,45 @@ export function HeroScrollDemo() {
         }
       >
         {isMobile ? (
-          <img
-            src={`/scrm.png`}
-            alt="hero"
-            height={720}
-            width={1200}
-            className="mx-auto rounded-2xl object-fill h-full  object-left-top"
-            draggable={false}
-          />
+          <a
+            href=""
+            target="__blank"
+            className="relative flex gap-10  h-full group/image"
+          >
+            <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
+              <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
+                {/* TODO */}
+                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/50 m-auto " />
+                <img
+                  src="/scrm.png"
+                  alt="header"
+                  width={800}
+                  height={800}
+                  className="h-full w-full aspect-square object-cover object-center rounded-sm blur-xs transition-all duration-200"
+                />
+              </div>
+            </div>
+          </a>
         ) : (
-          <img
-            src={`/scr.png`}
-            alt="hero"
-            height={720}
-            width={1200}
-            className="mx-auto rounded-2xl object-fill h-full  object-left-top"
-            draggable={false}
-          />
+          <a
+            href=""
+            target="__blank"
+            className="relative flex gap-10  h-full group/image"
+          >
+            <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
+              <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
+                {/* TODO */}
+                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/90 m-auto " />
+                <img
+                  src="/scr.png"
+                  alt="header"
+                  width={800}
+                  height={800}
+                  className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
+                />
+              </div>
+            </div>
+          </a>
         )}
       </ContainerScroll>
     </div>
