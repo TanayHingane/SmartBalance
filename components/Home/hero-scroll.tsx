@@ -36,7 +36,7 @@ export function HeroScrollDemo() {
             <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
               <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
                 {/* TODO */}
-                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/50 m-auto " />
+                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " />
                 <img
                   src="/SmartBLM.png"
                   alt="header"
@@ -56,7 +56,7 @@ export function HeroScrollDemo() {
             <div className="w-full  mx-auto bg-transparent dark:bg-transparent group h-full">
               <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
                 {/* TODO */}
-                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/90 m-auto " />
+                <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500  m-auto " />
                 <img
                   src="/SmartBL.png"
                   alt="header"
