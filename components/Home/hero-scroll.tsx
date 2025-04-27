@@ -29,7 +29,7 @@ export function HeroScrollDemo() {
       >
         {isMobile ? (
           <a
-            href=""
+            href="https://youtu.be/wKp2vxmG5q4"
             target="__blank"
             className="relative flex gap-10  h-full group/image"
           >
@@ -38,7 +38,7 @@ export function HeroScrollDemo() {
                 {/* TODO */}
                 <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/50 m-auto " />
                 <img
-                  src="/scrm.png"
+                  src="/SmartBL.png"
                   alt="header"
                   width={800}
                   height={800}
@@ -49,7 +49,7 @@ export function HeroScrollDemo() {
           </a>
         ) : (
           <a
-            href=""
+            href="https://youtu.be/wKp2vxmG5q4"
             target="__blank"
             className="relative flex gap-10  h-full group/image"
           >
@@ -58,7 +58,7 @@ export function HeroScrollDemo() {
                 {/* TODO */}
                 <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/90 m-auto " />
                 <img
-                  src="/scr.png"
+                  src="/SmartBL.png"
                   alt="header"
                   width={800}
                   height={800}
