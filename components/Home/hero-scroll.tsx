@@ -38,7 +38,7 @@ export function HeroScrollDemo() {
                 {/* TODO */}
                 <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/50 m-auto " />
                 <img
-                  src="/SmartBL.png"
+                  src="/SmartBML.png"
                   alt="header"
                   width={800}
                   height={800}
