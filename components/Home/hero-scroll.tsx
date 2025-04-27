@@ -38,11 +38,11 @@ export function HeroScrollDemo() {
                 {/* TODO */}
                 <Youtube className="h-20 w-20 absolute z-10 inset-0 text-red-500 bg-white/50 m-auto " />
                 <img
-                  src="/SmartBML.png"
+                  src="/SmartBLM.png"
                   alt="header"
                   width={800}
                   height={800}
-                  className="h-full w-full aspect-square object-cover object-center rounded-sm blur-xs transition-all duration-200"
+                  className="h-full w-full aspect-square object-cover object-center rounded-sm blur-none group-hover/image:blur-md transition-all duration-200"
                 />
               </div>
             </div>
