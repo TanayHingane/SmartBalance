@@ -76,7 +76,7 @@ export default function AboutPage() {
               <Youtube />
             </a>
             <a
-              href="mailto:tanayhingane03@gmail.com"
+              href="mailto:tanayhingane03@gmail.com?subject=Hello%20I'm%20____%20from%20____%20company&body=I%20want%20to%20start%20a%20new%20project%20about%20____%20and%20time%20duration%20is%20___%20days."
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-black"
