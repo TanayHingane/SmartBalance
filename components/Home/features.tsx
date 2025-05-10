@@ -52,47 +52,47 @@ const techStack = [
   {
     name: "Next.js",
     icon: "/nextdotjs.svg",
-    link: "",
+    link: "https://nextjs.org/",
   },
   {
     name: "React.js",
     icon: "/react.svg",
-    link: "",
+    link: "https://react.dev/",
   },
   {
     name: "TailwindCSS",
     icon: "/tailwindcss.svg",
-    link: "",
+    link: "https://tailwindcss.com/",
   },
   {
     name: "Drizzle",
     icon: "/drizzle.svg",
-    link: "",
+    link: "https://orm.drizzle.team/",
   },
   {
     name: "PostgreSQL",
     icon: "/postgresql.svg",
-    link: "",
+    link: "https://www.postgresql.org/",
   },
   {
     name: "Clerk",
     icon: "/clerk.svg",
-    link: "",
+    link: "https://clerk.com/",
   },
   {
     name: "Vercel",
     icon: "/vercel.png",
-    link: "",
+    link: "https://vercel.com/",
   },
   {
     name: "Shadcn/ui",
     icon: "/shadcnui.svg",
-    link: "",
+    link: "https://ui.shadcn.com/",
   },
   {
     name: "Lucide",
     icon: "/lucide.svg",
-    link: "",
+    link: "https://lucide.dev/",
   },
 ];
 
