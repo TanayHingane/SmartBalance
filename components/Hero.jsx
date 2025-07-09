@@ -20,7 +20,7 @@ function Hero() {
             <div className="inline-flex justify-center items-center my-5 px-3 py-1 rounded-full bg-transparent backdrop-blur-sm border border-neutral-300 dark:border-neutral-800  text-xs font-medium tracking-wider uppercase">
               💰 Expense Tracker
             </div>
-            <h1 className="text-4xl font-bold text-gray-900 sm:text-5xl">
+            <h1 className="text-4xl  font-bold text-gray-900 sm:text-5xl">
               Track your spending and
               <strong className="text-[#42d7d4]"> grow </strong>
               your savings
@@ -38,7 +38,7 @@ function Hero() {
 
               <a
                 className="inline-block w-full md:w-auto rounded border border-gray-200 px-5 py-3 font-medium text-gray-700 shadow-sm transition-colors hover:bg-gray-50 hover:text-gray-900"
-                href="about"
+                href="https://tanayhingane03.vercel.app/"
               >
                 <div className="flex items-center justify-center">
                   About <ArrowUpRight />

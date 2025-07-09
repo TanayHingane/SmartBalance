@@ -1,6 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@media (min-resolution: 120dpi) and (max-resolution: 140dpi) {
+  html {
+    font-size: 90%;
+  }
+}
+
+@custom-variant dark (&:is(.dark *));
+
 ::selection {
   background-color: #42d7d4;
   color: white;

@@ -36,7 +36,7 @@ function SideNavBar() {
       id: 4,
       title: "About",
       icon: <User />,
-      path: "/dashboard/about",
+      path: "https://tanayhingane03.vercel.app/",
     },
   ];
 

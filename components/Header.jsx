@@ -18,7 +18,7 @@ function Header() {
   return (
     <div className="w-full fixed z-50 bg-white top-0">
       {/* Top Navbar */}
-      <div className="p-5 justify-between flex border-b-2">
+      <div className="py-5 px-9 justify-between flex border-b-2">
         <div className="flex gap-2 items-center">
           <Wallet2 color="#42d7d4" height={30} width={30} />
           <h1 className="font-bold text-2xl">SmartBalance</h1>
@@ -34,7 +34,7 @@ function Header() {
           <Link href="/dashboard/budgets">
             <h1 className="text-lg">Budgets</h1>
           </Link>
-          <Link href="/about">
+          <Link href="https://tanayhingane03.vercel.app/">
             <h1 className="text-lg">About Me</h1>
           </Link>
         </div>
