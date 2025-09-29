@@ -1,4 +1,3 @@
-"use client";
 import { useUser } from "@clerk/nextjs";
 import React, { useEffect, useState } from "react";
 import CardInfo from "./CardInfo";
@@ -8,6 +7,11 @@ import { Budgets, Expenses } from "../../../utils/schema";
 import BarChartDash from "./BarChartDash";
 import BudgetItem from "./budgets/BudgetItem";
 import ExpenseListTable from "./expenses/ExpenseListTable";
+
+export const metadata = {
+  title: "Dashboard - SmartBalance",
+  description: "Your personal finance dashboard. View your budgets, expenses, and financial overview.",
+};
 
 function page() {
   const { user } = useUser();

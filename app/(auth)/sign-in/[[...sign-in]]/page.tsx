@@ -1,6 +1,11 @@
 import { SignIn } from "@clerk/nextjs";
 import { Wallet2 } from "lucide-react";
 
+export const metadata = {
+  title: "Sign In - SmartBalance",
+  description: "Sign in to your SmartBalance account to manage your finances.",
+};
+
 export default function Page() {
   return (
     <div className="grid min-h-svh lg:grid-cols-2">

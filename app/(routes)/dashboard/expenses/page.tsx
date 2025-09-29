@@ -8,6 +8,11 @@ import { Budgets, Expenses } from "../../../../utils/schema";
 import { db } from "../../../../utils/dbConfig";
 import ExpenseListTable from "./ExpenseListTable";
 
+export const metadata = {
+  title: "Expenses - SmartBalance",
+  description: "Track your expenses. Add, view, and manage your expenses to keep your budget in check.",
+};
+
 function page() {
   const { user } = useUser();
 
